@@ -1,6 +1,6 @@
 # Bulliestraining Website
 
-![Design preview of Bulliestraining website](./Images/sitepreview.jpg)
+![Design preview of Bulliestraining website](./Images/sitepreview (1).jpg)
 
 ## Welcome! 👋
 

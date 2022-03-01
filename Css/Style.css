@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  background-image: url("");
+  font-family: Sans-Serif;
+  /*make background-image cover screen*/
+  background-size: cover;
+  background-color: hsl(185, 41%, 84%);
+  /*make background-image fit screen*/
+  position: absolute;
+  /*make divs inside body fit screen, no scrolling*/
+  margin: 0;
+}
+/*.item {
+  border: 4px solid red;
+  border-radius: 4px;
+}*/
+a {
+  text-decoration: none;
+  color: #ff8177;
+  font-family: Sans-Serif;
+  font-weight: bold;
+}
+h3 {
+  text-align: center;
+}
+/*Navbar*/
+.nested_container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-template-areas:
+  "blank"
+  "logo1"
+  "slogan1"
+  "link1";
+  justify-items: center;
+  grid-gap: 20px;
+}
+.navbar {
+  grid-area: n1;
+  font-family: 'Playfair Display', Times New Roman;
+  color: white;
+  background-color: white;
+  background: rgba(0, 0, 0, 0.5) url('Images/magdalena-smolnicka-NBDXY9Rhg7M-unsplash.jpg');
+  height: 100%;
+  ubackground-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  border-radius: 10px;
+  margin: 40px;
+  z-index: 1000;
+}
+.black {
+  grid-area: "blank";
+}
+.logo {
+  grid-area: "logo1";
+  border: 2px solid white;
+  width: 8.5em;
+  height: 8.5em;
+  border-radius: 50%;
+}
+.slogan {
+  grid-area: "slogan1";
+}
+.link1 > li {
+  grid-area: "link1";
+  display: inline-block;
+  font-family: Sans-Serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0 15px 0 15px;
+}
+/*Nav2*/
+.links > li {
+  display: inline-block;
+  margin: 0 8px 0 8px;
+}
+/*Body*/
+.nested_container2 {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-template-areas:
+  "title1"
+  "para1";
+  padding: 10px;
+}
+.nested_containerimg {
+  grid-area: "para1";
+  display: grid;
+  grid-template-rows: repeat(1,auto);
+  grid-template-columns: repeat(2,auto);
+  padding: 10px;
+  grid-gap: 20px;
+}
+.about {
+  grid-area: "title1";
+  text-align: center;
+}
+#image1 {
+  width: 15em;
+  height: 12em;
+  border-radius: 5px;
+}
+#text1 {
+  padding: 10px;
+}
+.hr_solid1 {
+  width: 60%;
+  height: 0;
+  border: 0.5px solid #d87878;
+  margin-top: 2px;
+}
+/*mail*/
+.mailme {
+  grid-area: logo1;
+}
+form {
+  grid-area: slogan1;
+  background: rgba(0, 0, 0, 0.5) url('Images/charlesdeluvio-DziZIYOGAHc-unsplash.jpg');
+  height: 100%;
+  border-radius: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding: 20px;
+  font-family: Monospace;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.input1 {
+  color: cyan hsl(183, 100%, 15%);
+  background: hsl(185, 41%, 84%);
+  border-radius: 3px;
+  border: solid 1px hsl(172, 67%, 45%);
+  font-size: 20px;
+  font-family: Monospace;
+  font-weight: bold;
+  padding: 1px;
+  text-align: right;
+  height: 1.5em;
+  width: 10em;
+  margin: 10px;
+}
+.input2 {
+  color: cyan hsl(183, 100%, 15%);
+  background: hsl(185, 41%, 84%);
+  border-radius: 3px;
+  border: solid 1px hsl(172, 67%, 45%);
+  font-size: 20px;
+  font-family: Monospace;
+  font-weight: bold;
+  padding: 1px;
+  text-align: right;
+}
+/*Footer*/
+.nested_containerfoot {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-template-areas:
+  "contact"
+  "foot";
+  justify-items: center;
+  justify-content: center;
+  grid-gap: 20px
+}
+.footer {
+  background-color: black;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+/*@media screen and (max-width: 968px) {
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: repeat(1,auto);
+    grid-gap: 10px;
+  }
+  .navbar {}
+  .body {}
+  .Nav2 {}
+  .mail {}
+  .footer {}
+}*/
+
+@media screen and (min-width: 968px) {
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "n1"
+    "s1"
+    "b1"
+    "a1"
+    "x1"
+    "b2"
+    "f1";
+    grid-gap: 20px;
+  }
+  .nested_container1 {
+    padding: 10px;
+  }
+  .Nav2 {
+    grid-area: s1;
+    display: block;
+    color: white;
+    justify-self: center;
+    justify-items: center;
+    text-align: center;
+    background: #2f4f4f;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    font-family: Sans-Serif;
+    padding: 0.5em 0 0.5em 0;
+    z-index: 999;
+  }
+  .body {
+    grid-area: "b1";
+    gheight: 100%;
+  }
+  #myBtn {
+    grid-area: "x1";
+  }
+  #Navbar3 {
+    display: none;
+    position: fixed;
+    bottom: -8px;
+    right: 24%;
+    z-index: 1005;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    padding: 8px 15px 8px 15px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+  .mail {
+    grid-area: "b2";
+  }
+  .footer {
+    grid-area: "f1";
+  }
+}
+@media screen and (min-width: 1025px) {}

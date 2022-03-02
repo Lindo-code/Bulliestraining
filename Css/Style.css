@@ -1,6 +1,20 @@
 * {
   box-sizing: border-box;
 }
+#deco1 {
+
+  font-size: 0.8rem;
+  color: white;
+  text-decoration: none;
+
+}
+#deco2 {
+
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+
+}
 body {
   width: 100%;
   background-image: url("");
@@ -8,6 +22,7 @@ body {
   /*make background-image cover screen*/
   background-size: cover;
   background-color: hsl(185, 41%, 84%);
+  /*background-color: hsl(160 , 99% , 58%);*/
   /*make background-image fit screen*/
   position: absolute;
   /*make divs inside body fit screen, no scrolling*/
@@ -116,12 +131,29 @@ h3 {
   border: 0.5px solid #d87878;
   margin-top: 2px;
 }
-/*mail*/
+/*Footer*/
+.nested_containerfoot {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-template-areas:
+  "msg"
+  "contact"
+  "foot";
+  justify-items: center;
+  justify-content: center;
+  grid-gap: 20px
+}
 .mailme {
-  grid-area: logo1;
+  grid-area: "msg";
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  text-align: center;
+  color: white;
 }
 form {
-  grid-area: slogan1;
+  grid-area: "contact";
   background: rgba(0, 0, 0, 0.5) url('https://raw.githubusercontent.com/Lindo-code/Bulliestraining/main/Images/charlesdeluvio-DziZIYOGAHc-unsplash.jpg');
   height: 100%;
   border-radius: 10px;
@@ -159,17 +191,11 @@ form {
   padding: 1px;
   text-align: right;
 }
-/*Footer*/
-.nested_containerfoot {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: auto;
-  grid-template-areas:
-  "contact"
-  "foot";
-  justify-items: center;
-  justify-content: center;
-  grid-gap: 20px
+.foot {
+  grid-area: "foot";
+  color: white;
+  font-family: Monospace;
+  padding: 10px;
 }
 .footer {
   background-color: black;

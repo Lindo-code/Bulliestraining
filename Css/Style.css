@@ -6,6 +6,7 @@
   font-size: 0.8rem;
   color: white;
   text-decoration: none;
+  font-weight: normal;
 
 }
 #deco2 {
@@ -13,6 +14,7 @@
   font-size: 1.2rem;
   color: white;
   text-decoration: none;
+  font-weight: normal;
 
 }
 body {
@@ -28,6 +30,21 @@ body {
   /*make divs inside body fit screen, no scrolling*/
   margin: 0;
 }
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-template-areas:
+  "n1"
+  "s1"
+  "b1"
+  "a1"
+  "x1"
+  "b2"
+  "f1";
+  grid-gap: 20px;
+}
 /*.item {
   border: 4px solid red;
   border-radius: 4px;
@@ -41,24 +58,13 @@ a {
 h3 {
   text-align: center;
 }
-/*Navbar*/
-.nested_container {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: auto;
-  grid-template-areas:
-  "blank"
-  "logo1"
-  "slogan1"
-  "link1";
-  justify-items: center;
-  grid-gap: 20px;
+p {
+  font-size: 1.1rem;
 }
+/*Navbar*/
 .navbar {
   grid-area: n1;
-  font-family: 'Playfair Display', Times New Roman;
-  color: white;
-  background-color: white;
+  background-color: #2f4f4f;
   background: rgba(0, 0, 0, 0.5) url('https://raw.githubusercontent.com/Lindo-code/Bulliestraining/main/Images/magdalena-smolnicka-NBDXY9Rhg7M-unsplash.jpg');
   height: 100%;
   ubackground-position: center;
@@ -68,34 +74,86 @@ h3 {
   border-radius: 10px;
   margin: 40px;
   z-index: 1000;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-template-areas:
+  "blank"
+  "logo1"
+  "slogan1"
+  "link1";
+  justify-items: center;
+  justify-content: center;
 }
-.black {
-  grid-area: "blank";
-}
-.logo {
-  grid-area: "logo1";
-  border: 2px solid white;
-  width: 8.5em;
-  height: 8.5em;
-  border-radius: 50%;
-}
-.slogan {
-  grid-area: "slogan1";
-}
-.link1 > li {
-  grid-area: "link1";
-  display: inline-block;
-  font-family: Sans-Serif;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin: 0 15px 0 15px;
-}
-/*Nav2*/
-.links > li {
-  display: inline-block;
-  margin: 0 8px 0 8px;
+@media screen and (max-width: 968px) {
+  .list1 > li {
+    display: inline-block;
+    imargin-left: -1em;
+    margin: 10px;
+  }
+  #icon > a {
+    text-align: right;
+  }
+  .logo {
+    grid-area: logo1;
+    border: 2px solid white;
+    width: 6.5em;
+    height: 6.5em;
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 50%;
+    margin-top: -2em;
+  }
+  .slogan {
+    grid-area: slogan1;
+    font-family: 'Playfair Display', Times New Roman;
+    font-size: 0.9em;
+    color: white;
+  }
+  .link1 > li {
+    grid-area: link1;
+    display: inline-block;
+    font-family: Sans-Serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 0 15px 0 15px;
+  }
+  /*Nav2*/
+  .nav2 {
+    visibility: hidden;
+    grid-area: s1;
+  }
+  .links > li {
+    display: inline-block;
+    margin: 0 8px 0 8px;
+  }
+  /*BODY*/
+  .nested_containerimg {
+    grid-area: para1;
+    display: grid;
+    grid-template-rows: repeat(3,auto);
+    grid-template-columns: repeat(1,auto);
+    justify-content: center;
+    justify-items: center;
+  }
+  .ch1 {
+    visibility: visible;
+    margin-top: -0.5em;
+  }
+  .ch2 {
+    visibility: hidden;
+  }
+  .about {
+    grid-area: title1;
+    text-align: center;
+    margin-top: -1.5em;
+  }
 }
 /*Body*/
+.body {
+  grid-area: b1;
+  gheight: 100%;
+}
 .nested_container2 {
   display: grid;
   grid-template-rows: auto;
@@ -103,27 +161,48 @@ h3 {
   grid-template-areas:
   "title1"
   "para1";
-  padding: 10px;
 }
 .nested_containerimg {
-  grid-area: "para1";
+  grid-area: para1;
   display: grid;
-  grid-template-rows: repeat(1,auto);
-  grid-template-columns: repeat(2,auto);
-  padding: 10px;
-  grid-gap: 20px;
+  grid-template-rows: repeat(2,auto);
+  grid-template-columns: repeat(1,auto);
+  justify-content: center;
+  justify-items: center;
 }
 .about {
-  grid-area: "title1";
+  grid-area: title1;
   text-align: center;
 }
-#image1 {
-  width: 15em;
-  height: 12em;
+.img2 {
+  grid-row: 3;
+}
+.main2 {
+  grid-row: 4;
+}
+.image1 {
+  width: 18em;
+  height: 15em;
   border-radius: 5px;
 }
 #text1 {
-  padding: 10px;
+  padding: 20px;
+  text-align: left;
+}
+#text2 {
+  padding: 20px;
+  margin-top: -5em;
+  text-align: left;
+}
+.list2 {
+  padding: 20px;
+}
+.list2 > ul {
+  padding: 20px;
+  font-size: 1.1em;
+}
+ul > #li1 {
+  margin: 10px;
 }
 .hr_solid1 {
   width: 60%;
@@ -145,7 +224,7 @@ h3 {
   grid-gap: 20px
 }
 .mailme {
-  grid-area: "msg";
+  grid-area: msg;
   justify-content: center;
   justify-self: center;
   justify-items: center;
@@ -153,7 +232,7 @@ h3 {
   color: white;
 }
 form {
-  grid-area: "contact";
+  grid-area: contact;
   background: rgba(0, 0, 0, 0.5) url('https://raw.githubusercontent.com/Lindo-code/Bulliestraining/main/Images/charlesdeluvio-DziZIYOGAHc-unsplash.jpg');
   height: 100%;
   border-radius: 10px;
@@ -192,12 +271,13 @@ form {
   text-align: right;
 }
 .foot {
-  grid-area: "foot";
+  grid-area: foot;
   color: white;
   font-family: Monospace;
   padding: 10px;
 }
 .footer {
+  grid-area: f1;
   background-color: black;
   height: 100%;
   background-position: center;
@@ -205,6 +285,13 @@ form {
   background-size: cover;
   background-blend-mode: darken;
 }
+#myBtn {
+  grid-area: x1;
+}
+.mail {
+  grid-area: b2;
+}
+.footer {}
 /*@media screen and (max-width: 968px) {
   .container {
     display: grid;
@@ -221,27 +308,43 @@ form {
 }*/
 
 @media screen and (min-width: 968px) {
-  .container {
-    display: grid;
-    height: 100vh;
-    grid-template-rows: auto;
-    grid-template-columns: auto;
-    grid-template-areas:
-    "n1"
-    "s1"
-    "b1"
-    "a1"
-    "x1"
-    "b2"
-    "f1";
-    grid-gap: 20px;
-  }
   .nested_container1 {
     padding: 10px;
   }
-  .Nav2 {
+  /*NAVBAR*/
+  .list1 {
+    grid-area: blank;
+    margin-right: -12vw;
+    justify-self: right;
+  }
+  .list1 > li {
+    display: inline-block;
+    margin: 10px;
+  }
+  .logo {
+    grid-area: logo1;
+    border: 2px solid white;
+    width: 8.5em;
+    height: 8.5em;
+    border-radius: 50%;
+    margin-top: -2em;
+  }
+  .slogan {
+    grid-area: slogan1;
+    font-family: 'Playfair Display', Times New Roman;
+    color: white;
+  }
+  .link1 > li {
+    grid-area: link1;
+    display: inline-block;
+    font-family: Sans-Serif;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0 15px 0 15px;
+  }
+  .nav2 {
+    display: grid;
     grid-area: s1;
-    display: block;
     color: white;
     justify-self: center;
     justify-items: center;
@@ -254,14 +357,7 @@ form {
     padding: 0.5em 0 0.5em 0;
     z-index: 999;
   }
-  .body {
-    grid-area: "b1";
-    gheight: 100%;
-  }
-  #myBtn {
-    grid-area: "x1";
-  }
-  #Navbar3 {
+  #nav3 {
     display: none;
     position: fixed;
     bottom: -8px;
@@ -275,11 +371,58 @@ form {
     border-radius: 10px;
     font-size: 15px;
   }
-  .mail {
-    grid-area: "b2";
+  .links > li {
+    display: inline-block;
+    margin: 0 8px 0 8px;
   }
-  .footer {
-    grid-area: "f1";
+  /*BODY*/
+  .nested_containerimg {
+    grid-area: para1;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "main1 main2 main2"
+    "main3 main3 main4"
+    "main5 main6 main6";
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    padding: 30px;
+    grid-gap: 10px;
+  }
+  .img1 {
+    grid-area: main1;
+  }
+  .main1 {
+    grid-area: main2;
+  }
+  .main2 {
+    grid-area: main3;
+  }
+
+  .img2 {
+    grid-area: main4;
+  }
+  .img3 {
+    grid-area: main5;
+  }
+  .ch1 {
+    display: none;
+  }
+  .ch2 {
+    display: block;
+  }
+  .list2 {
+    grid-area: main6;
+  }
+  #text1 {
+    padding: 0 40px 0 40px;
+    text-align: left;
+  }
+  #text2 {
+    margin-top: -5em;
   }
 }
 @media screen and (min-width: 1025px) {}

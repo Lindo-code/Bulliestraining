@@ -18,7 +18,7 @@
 
 }
 body {
-  background: hsl(168, 34%, 41%) url('/Images/paws1.svg');
+  background: hsl(168, 34%, 41%) url('https://raw.githubusercontent.com/Lindo-code/Bulliestraining/06023da453edd1c56f5bd0a73f4e299bcfd90c0f/Images/paws1.svg');
   background-size: 250px 250px;
   background-blend-mode: darken;
   font-family: Sans-Serif;

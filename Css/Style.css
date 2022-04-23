@@ -18,7 +18,9 @@
 
 }
 body {
-  background: hsl(168, 34%, 41%);
+  background: hsl(168, 34%, 41%) url('/Images/paws1.svg');
+  background-size: 250px 250px;
+  background-blend-mode: darken;
   font-family: Sans-Serif;
   position: absolute;
   margin: 0;
@@ -48,10 +50,18 @@ a {
   font-family: Sans-Serif;
   font-weight: bold;
 }
+h2 {
+  font-family: "Fraunces";
+  font-weight: bold;
+  text-align: center;
+  color: hsl(167, 40%, 24%);
+  padding-top: 0.3em;
+}
 h3 {
   font-family: "Fraunces";
   font-weight: bold;
   text-align: center;
+  color: #fff;
 }
 p {
   font-family: "Barlow";
@@ -93,10 +103,37 @@ em {
 /*Body*/
 .body {
   grid-area: b1;
-  gheight: 100%;
+  height: 100%;
+}
+.bone {
+  background: #f2eade;
+  height: 40px;
+  width: 6em;
+  max-width: 10em;
+  position: relative;
+  margin: 1em 0 -2em 0;
+}
+.bone::before,
+.bone::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  top: -20px;
+  width: 40px;
+  height: 40px;
+  background: #f2eade;
+  box-shadow: 0 40px 0 #f2eade;
+}
+.bone::before {
+  left: -20px;
+}
+.bone::after {
+  right: -20px;
 }
 .nested_container2 {
   display: grid;
+  text-align: center;
+  justify-items: center;
   grid-template-rows: auto;
   grid-template-columns: auto;
   grid-template-areas:
@@ -114,7 +151,8 @@ em {
 .about {
   grid-area: title1;
   text-align: center;
-  margin-top: -1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .img2 {
   grid-row: 3;
@@ -125,21 +163,23 @@ em {
 .image0 {
   width: 15em;
   height: 12em;
+  border: 2px solid #99b898;
   border-radius: 5px;
 }
 .image1 {
   width: 18em;
   height: 15em;
+  border: 2px solid #99b898;
   border-radius: 5px;
 }
 #text1 {
   padding: 20px;
   text-align: left;
-  margin-top: -4em;
+  margin-top: 0;
 }
 #text2 {
   padding: 20px;
-  margin-top: -5em;
+  margin-top: -2em;
   text-align: left;
 }
 .list2 {
@@ -148,7 +188,7 @@ em {
 .list2 > ul {
   padding: 20px;
   font-size: 1.1em;
-  margin-top: -6em;
+  margin-top: -3em;
 }
 ul > #li1 {
   margin: 10px;
@@ -300,7 +340,7 @@ form {
   }
   .ch1 {
     visibility: visible;
-    margin-top: -0.5em;
+    margin-top: 0.8em;
   }
   .ch2 {
     visibility: hidden;
@@ -308,7 +348,8 @@ form {
   .about {
     grid-area: title1;
     text-align: center;
-    margin-top: -1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
   }
   .sidenav {
     height: 100%;
@@ -379,32 +420,33 @@ form {
     color: white;
   }
   .nav2 {
-    display: grid;
+    display: flex;
+    justify-content: space-around;
     grid-area: s1;
     color: white;
     justify-self: center;
     justify-items: center;
     text-align: center;
     background: #2f4f4f;
-    border-radius: 3px;
+    border-radius: 50px;
     text-decoration: none;
     color: white;
     font-family: Sans-Serif;
-    padding: 0.5em 0 0.5em 0;
+    margin-top: 0.5em;
     z-index: 999;
   }
   #nav3 {
     display: none;
+    justify-content: space-around;
     position: fixed;
-    bottom: -8px;
+    bottom: 2px;
     right: 24%;
     z-index: 1005;
     border: none;
     outline: none;
     background-color: red;
     color: white;
-    padding: 8px 15px 8px 15px;
-    border-radius: 10px;
+    border-radius: 50px;
     font-size: 15px;
   }
   .sidenav {
@@ -415,6 +457,31 @@ form {
     margin: 0 8px 0 8px;
   }
   /*BODY*/
+
+  .speech-bubble {
+    width: auto;
+    height: auto;
+    background:
+    #ffe4c4;
+    position: relative;
+    left: 0;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .speech-bubble:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 13px solid
+    transparent;
+    border-right: 26px solid
+    #ffe4c4;
+    border-bottom: 13px solid
+    transparent;
+    margin: 150px 0 0 -40px;
+  }
   .nested_containerimg {
     grid-area: para1;
     display: grid;
@@ -462,7 +529,7 @@ form {
   }
   #text2 {
     padding: 20px;
-    margin-top: -5em;
+    margin-top: 0;
     margin-bottom: 0;
     text-align: left;
   }

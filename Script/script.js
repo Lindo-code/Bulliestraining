@@ -5,7 +5,7 @@ window.onscroll = function() {
 
 function scrollFunction() {
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-    nav3.style.display = "block";
+    nav3.style.display = "flex";
     nav2.style.display = "none";
   } else {
     nav3.style.display = "none";
